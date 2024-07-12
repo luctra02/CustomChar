@@ -1,0 +1,110 @@
+@startuml
+class CustomChar {
+  -nickName : String
+  -colour : String
+  -gender : String
+  -hair : String
+  -extras : String
+  -hairColour : String
+
+  +String getNickName()
+  +String getColour()
+  +String getHairColour()
+  +String getGender()
+  +String getHair()
+  +String getExtras()
+  +void setNickName()
+  +void setHairColour(String colour)
+  +void setColour(String colour)
+  +void setGender(String gender)
+  +void setHair(String hair)
+  +void setExtras(String extras)
+}
+
+class CustomCharHandler {
+  -mapper : ObjectMapper
+  -{static} APPLICATION_JSON : String
+  -{static} APPLICATION_FORM_URLENCODED : String
+  -{static} ACCEPT_HEADER : String
+  -{static} CONTENT_TYPE_HEADER : String
+
+  +void writeCustomCharState(String filename, CustomChar customChar)
+  +CustomChar readCustomCharState(String nickName)
+  +{static} File getFile(String filename)
+}
+
+class CustomCharModelApplication {
+  +{static} void main(String [] args)
+  }
+
+class CustomCharModelController {
+  +{static} CUSTOMCHAR_MODEL_SERVICE_PATH : String
+  -mapper : ObjectMapper
+
+  +CustomChar CustomChar getCustomChar()
+  +CustomChar getCustomChar(@PathVariable("nickName") String nickName)
+  +void saveCustomChar(@PathVariable("nickName") String nickName, @RequestBody CustomChar customChar)
+  -static File getFile(String filename)
+  }
+
+class Controller {
+  -colourTable, genderTable, hairTable, extrasTable : AnchorPane
+  -colourButton, genderButton, hairButton, extrasButton : Button
+  -imageGridPane : GridPane
+  -genderView, hairView : ImageVieW
+  -nameValue : TextField
+  -extrasView : ImageView
+  -tables : AnchorPane[]
+  -buttons : Button[]
+  -customChar : CustomChar
+  -customCharHandler : CustomCharHandler
+  -changeColor : ChangeColor
+
+
+  +Controller()
+  +String getHair()
+  +String getExtras()
+  +String getColour()
+  +String getGender()
+  +String getNameValue()
+  +String getHairColour()
+  +void initialize()
+  +void changeTableToColourPicker()
+  +void changeTableToGenderPicker()
+  +void changeTableToHairPicker()
+  +void changeTableToExtrasPicker()
+  +void changeName(ActionEvent event)
+  -void changeTable(AnchorPane table)
+  +void changeColour(ActionEvent event)
+  +void changeHairColour(ActionEvent event)
+  +void changeGender(ActionEvent event)
+  +void changeHair(ActionEvent event)
+  +void changeExtras(ActionEvent event)
+  +void updateImage()
+  -void loadState()
+  -void saveState()
+  -void showErrorMessake(String errorMessage)
+}
+
+class ChangeColor {
+  -colorAdjust : ColorAdjust
+
+  +ColorAdjust getHue(String colour)
+}
+
+class Application {
+}
+
+class App {
+  +void start(Stage stage)
+  +{static} void main(String[] args)
+}
+
+App --|> Application
+App --> Application
+Controller --> CustomChar
+Controller --> CustomCharHandler
+Controller --> ChangeColor
+CustomCharHandler --> CustomChar
+
+@enduml

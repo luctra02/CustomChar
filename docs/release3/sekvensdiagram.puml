@@ -1,0 +1,17 @@
+@startuml
+user -> fxui: Change name to "Lucaspai"
+fxui -> core: setNickname("Lucaspai")
+
+core -> fxui: Updates to display "Blue" character
+fxui -> user: Display updated image
+
+user -> fxui: click "Save"
+fxui -> core: saveState()
+core -> rest: writeCustomCharState("Lucaspai")
+rest -> database: Save to database
+database -> rest: saved
+rest -> core: response
+core -> fxui: saved
+fxui -> user: saved
+
+@enduml

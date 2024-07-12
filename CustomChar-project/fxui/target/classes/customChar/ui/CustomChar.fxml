@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customChar.ui.Controller">
+   <children>
+      <HBox layoutX="335.0" layoutY="54.0" prefHeight="25.0" prefWidth="235.0">
+         <children>
+            <Button fx:id="colourButton" mnemonicParsing="false" onAction="#changeTableToColourPicker" prefHeight="25.0" prefWidth="55.0" text="Colour">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="genderButton" mnemonicParsing="false" onAction="#changeTableToGenderPicker" opacity="0.5" prefHeight="25.0" prefWidth="55.0" text="Gender">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="hairButton" mnemonicParsing="false" onAction="#changeTableToHairPicker" opacity="0.5" prefHeight="25.0" prefWidth="55.0" text="Hair">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="extrasButton" mnemonicParsing="false" onAction="#changeTableToExtrasPicker" opacity="0.5" prefHeight="25.0" prefWidth="55.0" text="Extras" />
+         </children>
+      </HBox>
+      <AnchorPane fx:id="colourTable" layoutX="335.0" layoutY="120.0" prefHeight="55.0" prefWidth="235.0">
+         <children>
+            <HBox prefHeight="55.0" prefWidth="235.0">
+               <children>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button fx:id="blueButton" mnemonicParsing="false" onAction="#changeColour" prefHeight="25.0" prefWidth="55.0" text="Blue" textFill="BLUE">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="purpleButton" mnemonicParsing="false" onAction="#changeColour" prefHeight="25.0" prefWidth="55.0" text="Purple" textFill="PURPLE">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button fx:id="redButton" mnemonicParsing="false" onAction="#changeColour" prefHeight="25.0" prefWidth="55.0" text="Red" textFill="RED">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="brownButton" mnemonicParsing="false" onAction="#changeColour" prefHeight="25.0" prefWidth="55.0" text="Brown" textFill="#901414">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button fx:id="greenButton" mnemonicParsing="false" onAction="#changeColour" prefHeight="25.0" prefWidth="55.0" text="Green" textFill="GREEN">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="blackButton" mnemonicParsing="false" onAction="#changeColour" prefHeight="25.0" prefWidth="55.0" text="Black">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="55.0">
+                     <children>
+                        <Button fx:id="pinkButton" mnemonicParsing="false" onAction="#changeColour" prefHeight="25.0" prefWidth="55.0" text="Pink" textFill="#f55c78">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="yellowButton" mnemonicParsing="false" onAction="#changeColour" prefHeight="25.0" prefWidth="55.0" text="Yellow" textFill="#c9bc00">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="genderTable" layoutX="335.0" layoutY="120.0" prefHeight="25.0" prefWidth="115.0" visible="false">
+         <children>
+            <HBox prefHeight="25.0" prefWidth="115.0">
+               <children>
+                  <VBox prefHeight="25.0" prefWidth="60.0">
+                     <children>
+                        <Button fx:id="maleButton" mnemonicParsing="false" onAction="#changeGender" prefHeight="25.0" prefWidth="55.0" text="Male">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="25.0" prefWidth="55.0">
+                     <children>
+                        <Button fx:id="femaleButton" mnemonicParsing="false" onAction="#changeGender" prefHeight="25.0" prefWidth="55.0" text="Female">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="hairTable" layoutX="335.0" layoutY="120.0" prefHeight="180.0" prefWidth="235.0" visible="false">
+         <children>
+            <HBox prefHeight="55.0" prefWidth="235.0">
+               <children>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#changeHair" prefHeight="25.0" prefWidth="55.0" text="none">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#changeHair" prefHeight="25.0" prefWidth="55.0" text="hair1">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#changeHair" prefHeight="25.0" prefWidth="55.0" text="hair2">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#changeHair" prefHeight="25.0" prefWidth="55.0" text="hair3">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#changeHair" prefHeight="25.0" prefWidth="55.0" text="hair4">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#changeHair" prefHeight="25.0" prefWidth="55.0" text="hair5">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox layoutY="125.0" prefHeight="55.0" prefWidth="235.0">
+               <children>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button fx:id="blueButton1" mnemonicParsing="false" onAction="#changeHairColour" prefHeight="25.0" prefWidth="55.0" text="Blue" textFill="BLUE">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="purpleButton1" mnemonicParsing="false" onAction="#changeHairColour" prefHeight="25.0" prefWidth="55.0" text="Purple" textFill="PURPLE">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button fx:id="redButton1" mnemonicParsing="false" onAction="#changeHairColour" prefHeight="25.0" prefWidth="55.0" text="Red" textFill="RED">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="brownButton1" mnemonicParsing="false" onAction="#changeHairColour" prefHeight="25.0" prefWidth="55.0" text="Brown" textFill="#901414">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="60.0">
+                     <children>
+                        <Button fx:id="greenButton1" mnemonicParsing="false" onAction="#changeHairColour" prefHeight="25.0" prefWidth="55.0" text="Green" textFill="GREEN">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="blackButton1" mnemonicParsing="false" onAction="#changeHairColour" prefHeight="25.0" prefWidth="55.0" text="Black">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="55.0">
+                     <children>
+                        <Button fx:id="pinkButton1" mnemonicParsing="false" onAction="#changeHairColour" prefHeight="25.0" prefWidth="55.0" text="Pink" textFill="#f55c78">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="yellowButton1" mnemonicParsing="false" onAction="#changeHairColour" prefHeight="25.0" prefWidth="55.0" text="Yellow" textFill="#c9bc00">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="extrasTable" layoutX="335.0" layoutY="120.0" prefHeight="55.0" prefWidth="135.0" visible="false">
+         <children>
+            <HBox prefHeight="55.0" prefWidth="135.0">
+               <children>
+                  <VBox prefHeight="55.0" prefWidth="70.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#changeExtras" prefHeight="25.0" prefWidth="65.0" text="none">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#changeExtras" prefHeight="25.0" prefWidth="65.0" text="tophat">
+                           <VBox.margin>
+                              <Insets right="5.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="55.0" prefWidth="65.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#changeExtras" prefHeight="25.0" prefWidth="65.0" text="strawhat">
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#changeExtras" prefHeight="25.0" prefWidth="65.0" text="wiz-hat">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="110.0" layoutY="14.0" prefHeight="35.0" prefWidth="123.0">
+         <children>
+            <TextField fx:id="nameValue" layoutX="-17.0" layoutY="-8.0" onAction="#changeName" prefHeight="51.0" prefWidth="158.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Button layoutX="507.0" layoutY="348.0" mnemonicParsing="false" onAction="#saveState" onMouseClicked="#saveState" prefHeight="35.0" prefWidth="63.0" text="Save" />
+      <Button layoutX="432.0" layoutY="348.0" mnemonicParsing="false" onAction="#loadState" onMouseClicked="#loadState" prefHeight="35.0" prefWidth="63.0" text="Load" />
+      <GridPane fx:id="imageGridPane" layoutX="43.0" layoutY="123.0" prefHeight="226.0" prefWidth="257.0">
+        <columnConstraints>
+          <ColumnConstraints />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="111.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="162.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ImageView fx:id="extrasView" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

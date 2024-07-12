@@ -1,0 +1,36 @@
+@startuml customChar package diagram
+folder customChar {
+
+  component core {
+    package customChar.core
+    package customChar.json
+  }
+
+  [customChar.core] ..> [customChar.json]
+
+  customChar.json ..> [jackson]
+
+  component fxui {
+    package customChar.ui
+  }
+
+  customChar.ui ..> customChar.core
+  customChar.ui ..> customChar.json
+
+  component javafx {
+    package customChar.fxml
+  }
+
+  fxui ..> customChar.fxml
+
+  component rest {
+    package customChar.rest
+  }
+
+  fxui ..> customChar.rest
+  rest ..> [springboot]
+  rest ..> customChar.json
+  rest ..> customChar.core
+
+}
+@enduml
